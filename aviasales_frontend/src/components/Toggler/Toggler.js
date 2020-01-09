@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { toggle } from '../../actions/filter';
 
 import { MyButton } from './Button';
 
@@ -15,29 +18,35 @@ const Wrapper = styled.div`
 
 
 export const Toggler = props => {
-  const [leftActive, setLeftActive] = useState(true);
+
+  const dispatch = useDispatch();
+  const fast = useSelector(state => state.filter.fast);
   
   const handleLeftClick = e => {
     e.preventDefault();
-    setLeftActive(true);
+    if (fast) {
+      dispatch(toggle('fast'));
+    }
   }
 
   const handleRightClick = e => {
     e.preventDefault();
-    setLeftActive(false);
+    if (!fast) {
+      dispatch(toggle('fast'));
+    }
   }
 
   return (
     <Wrapper>
       <MyButton 
         border='left'
-        active={leftActive}
+        active={!fast}
         onClick={handleLeftClick}
         value='Самый дешёвый'
       />
       <MyButton
         border='right'
-        active={!leftActive}
+        active={fast}
         onClick={handleRightClick}
         value='Самый быстрый'
       />

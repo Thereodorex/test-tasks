@@ -36,7 +36,11 @@ const Row = props => {
         <main>{props.duration}</main>
       </Cell>
       <Cell>
-        <header>{props.stops.length} Пересадок</header>
+        <header>
+          {props.stops.length} {props.stops.length == 1 ? 'Пересадка'
+          : props.stops.length != 0 && props.stops.length < 5 ? 'Пересадки'
+          : 'Пересадок'}
+          </header>
         <main>{props.stops.join(',')}</main>
       </Cell>
     </RowStyled>
@@ -77,8 +81,6 @@ const Logo = styled.div`
   flex: 1 0 0;
   height: 36px;
 `;
-
-const Header = () => <RowStyled className={styles.header}/>;
 
 export const Item = props => {
   return (

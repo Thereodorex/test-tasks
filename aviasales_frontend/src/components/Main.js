@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 750px;
   justify-content: space-between;
+  align-items: flex-start;
 `;
 
 export const Main = props => {

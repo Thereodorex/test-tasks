@@ -26,6 +26,7 @@ export const Option = props => {
 
   const handleClick = e => {
     e.preventDefault();
+    props.handleClick();
     setActive(active ? false : true);
   }
 
