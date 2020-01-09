@@ -6,7 +6,7 @@ import { Option } from './Option'
 const Wrapper = styled.div`
   background-color: white;
   width: 230px;
-  padding: 20px 0;
+  padding: 10px 0;
   line-height: 12px;
   border-radius: 5px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);

@@ -13,8 +13,8 @@ const Wrapper = styled.div`
 
 export const Result = props => {
   const ticket = {
-    "price":54986,
-    "carrier":"S7",
+    "price": 54986,
+    "carrier": "S7",
     "segments": [
       {
         "origin": "MOW",
