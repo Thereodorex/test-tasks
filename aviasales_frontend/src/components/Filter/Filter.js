@@ -8,18 +8,18 @@ import { toggle } from '../../actions/filter';
 import { Option } from './Option'
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   box-sizing: content-box;
-  background-color: white;
   width: 230px;
   // max-height: 150px;
   padding: 10px 0;
-  line-height: 12px;
   border-radius: 5px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
   font-size: 12px;
+  line-height: 12px;
   text-transform: uppercase;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
 `;
 
 const TextWrapper = styled.div`

@@ -24,16 +24,29 @@ const RowStyled = styled.div`
   justify-content: space-between;
 `;
 
+const parseDuration = duration => `${Math.floor(duration / 60)}ч ${duration % 60}м`;
+
+const parseDate = (date, duration) => {
+  const dateStart = new Date(date);
+  const dateEnd = new Date(dateStart.getTime() + duration * 60000);
+
+  console.log(+dateStart);
+  console.log(+dateEnd);
+
+  return `${dateStart.getHours().toString().padStart(2, '0')}:${dateStart.getMinutes().toString().padStart(2, '0')} - 
+          ${dateEnd.getHours().toString().padStart(2, '0')}:${dateEnd.getMinutes().toString().padStart(2, '0')}`;
+}
+
 const Row = props => {
   return (
     <RowStyled>
       <Cell>
         <header>{props.origin} - {props.destination}</header>
-        <main>{props.date.slice(0, 10)}</main>
+        <main>{parseDate(props.date, props.duration)}</main>
       </Cell>
       <Cell>
         <header>В пути</header>
-        <main>{props.duration}</main>
+        <main>{parseDuration(props.duration)}</main>
       </Cell>
       <Cell>
         <header>
@@ -86,7 +99,7 @@ export const Item = props => {
   return (
     <Wrapper>
       <RowStyled>
-        <Price>{props.price} P</Price>
+        <Price>{Math.floor(props.price / 1000)} {(props.price + "").slice(-3)} P</Price>
         <Logo><img src={`http://pics.avs.io/99/36/{${props.carrier}}.png`} alt={props.carrier + " logo"} /></Logo>
       </RowStyled>
       <Row {...props.segments[0]} />

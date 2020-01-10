@@ -21,19 +21,19 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Option = props => {
-  const [active, setActive] = useState(props.active);
+export const Option = ({ handleClick, active: propsActive, value }) => {
+  const [active, setActive] = useState(propsActive);
 
-  const handleClick = e => {
+  const handleOptionClick = e => {
     e.preventDefault();
-    props.handleClick();
-    setActive(active ? false : true);
+    handleClick();
+    setActive(!active);
   }
 
   return (
-    <Wrapper onClick={handleClick}>
+    <Wrapper onClick={handleOptionClick}>
       <Box active={active}/>
-      {props.value}
+      {value}
     </Wrapper>
   );
 }

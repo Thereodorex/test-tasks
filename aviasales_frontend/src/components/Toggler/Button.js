@@ -25,9 +25,6 @@ const Wrapper = styled.div`
   }
 `;
 
-export const MyButton = props => {
-
-  return (
-    <Wrapper {...props}>{props.value}</Wrapper>
-  );
-}
+export const MyButton = props => (
+  <Wrapper {...props}>{props.value}</Wrapper>
+);

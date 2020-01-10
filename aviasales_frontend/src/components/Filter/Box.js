@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const StyledBox = styled.div`
   display: inline-block;
   margin-right: 10px;
   width: 20px;
@@ -21,8 +21,8 @@ const CheckMark = styled.div`
 
 export const Box = props => {
   return (
-    <Wrapper {...props}>
+    <StyledBox {...props}>
         {props.active ? <CheckMark /> : <></>}
-    </Wrapper>
+    </StyledBox>
   );
 }

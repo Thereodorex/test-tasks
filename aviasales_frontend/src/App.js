@@ -6,7 +6,7 @@ import { Main } from './components/Main';
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: #E5E5E5;
   display: flex;
   flex-direction: column;
