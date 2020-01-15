@@ -1,0 +1,76 @@
+{
+  "parser": "babel-eslint",
+
+  "rules": {
+    "camelcase": "off",
+    // Максимальная длина строки с учетом пробелов, в стандарте 100
+    "max-len": ["error", 250],
+    // Точка с запятой нужна всегда
+    "babel/semi": "error",
+
+    // В js файлах мы используем jsx синтаксис
+    "react/jsx-filename-extension": 0,
+
+    "react/jsx-one-expression-per-line": "off",
+    "react/prop-types": "off",
+
+    // Отредактируем организацию для порядка методов при создании React компонента
+    // Добавим в начало определение типов (type-annotations)
+    "react/sort-comp": [2, {
+      "order": [
+        "static-methods",
+        "lifecycle",
+        "everything-else",
+        "render"
+      ]
+    }],
+
+    // По умолчанию рекомендуется проверять как вложенность, так и идентификатор на сопоставление лейбла с элементом управления
+    // Сделаем так, чтобы одной проверки было достаточно
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "CheckBox" ],
+      "required": {
+        "some": [ "nesting", "id" ]
+      },
+      "allowChildren": true
+    }],
+
+    // Правила для accessibility:
+
+    // Элемент с обработчиком кликов должен иметь обработчик клавиатуры
+    "jsx-a11y/click-events-have-key-events": "off",
+
+    // Принудительное срабатывание onfocus/onblur при onmouseover/onmouseout
+    "jsx-a11y/mouse-events-have-key-events": "off",
+
+    // HTML элемент с обработчиком должен иметь роль
+    "jsx-a11y/no-static-element-interactions": "off",
+
+    "jsx-a11y/anchor-is-valid": "off",
+    // не всегда используется
+    // todo: обновить правило, когда появится опция minAttributes
+    "react/destructuring-assignment": "off",
+    // у нас лейбл не всегда имеет htmlFor
+    "jsx-a11y/label-has-associated-control": "off",
+    // поле current у ref является мутируемым
+    "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["ref"]}],
+
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "prefer-template": "off",
+
+    "no-confusing-arrow": "off"
+  },
+
+  "plugins": [
+    "babel"
+  ],
+
+  "extends": [
+    "airbnb"
+  ],
+
+  "env": {
+    "browser": true
+  }
+}

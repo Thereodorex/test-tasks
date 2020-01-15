@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useState } from 'react';
 
-import { Box } from './Box';
+import { Box } from '../Box';
 
-const Wrapper = styled.div`
+const OptionStyled = styled.div`
   padding: 10px 20px;
   cursor: pointer;
   display: flex;
@@ -21,19 +20,11 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Option = ({ handleClick, active: propsActive, value }) => {
-  const [active, setActive] = useState(propsActive);
-
-  const handleOptionClick = e => {
-    e.preventDefault();
-    handleClick();
-    setActive(!active);
-  }
-
+export const Option = ({ active, value, handleClick }) => {
   return (
-    <Wrapper onClick={handleOptionClick}>
+    <OptionStyled onClick={handleClick}>
       <Box active={active}/>
       {value}
-    </Wrapper>
+    </OptionStyled>
   );
 }

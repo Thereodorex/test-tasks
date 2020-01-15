@@ -11,18 +11,18 @@ const StyledBox = styled.div`
 `;
 
 const CheckMark = styled.div`
-    margin: 4px 0 0 4px;
-    width: 10px;
-    height: 6px;
-    border-bottom: 2px solid #2196F3;
-    border-left: 2px solid #2196F3;
-    transform: rotate(-45deg);
+  margin: 4px 0 0 4px;
+  width: 10px;
+  height: 6px;
+  border-bottom: 2px solid #2196F3;
+  border-left: 2px solid #2196F3;
+  transform: rotate(-45deg);
 `;
 
-export const Box = props => {
+export const Box = ({active}) => {
   return (
-    <StyledBox {...props}>
-        {props.active ? <CheckMark /> : <></>}
+    <StyledBox active={active}>
+        {active ? <CheckMark /> : null}
     </StyledBox>
   );
 }

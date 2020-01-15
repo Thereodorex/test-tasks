@@ -18,7 +18,7 @@ function App() {
   return (
     <Wrapper className="Rea">
       <Header />
-      <Main></ Main>
+      <Main />
     </Wrapper>
   );
 }

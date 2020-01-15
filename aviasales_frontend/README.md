@@ -1,5 +1,14 @@
 # Тестовое задание Aviasales ([frontend](https://aviasales.recruitee.com/o/frontend-developer-js-coffeescript-react%C2%A0redux--aviasalesru))
 
+## Запуск
+
+1. Устанавливаем пакеты - `npm install`
+2. Запускаем в dev-режиме - `npm start`
+
+Проект будет доступен по адресу [http://localhost:3000](http://localhost:3000)
+
+## Задание
+
 Основной frontend проект нашей команды — это страница выдачи билетов со множеством фильтров, настроек и, собственно, билетов.
 Проект написан на React, поэтому тестовое задание приближено к ежедневным задачам.
 
