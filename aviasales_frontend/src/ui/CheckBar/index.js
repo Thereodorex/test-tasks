@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Option } from './Option'
 
-const Wrapper = styled.div`
+const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
   box-sizing: content-box;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   background-color: white;
 `;
 
-const TextWrapper = styled.aside`
+const TextWrapper = styled.div`
   padding: 10px 20px;
 `;
 

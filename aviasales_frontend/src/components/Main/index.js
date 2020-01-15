@@ -8,7 +8,7 @@ import { Item } from './Item.js';
 
 import { ticketsSelector } from '../../features/tickets/selectors';
 
-const MainStyled = styled.div`
+const MainStyled = styled.main`
   margin-top: 50px;
   display: flex;
   flex-flow: row wrap;
@@ -18,7 +18,7 @@ const MainStyled = styled.div`
   align-items: flex-start;
 `;
 
-const Result = styled.section`
+const Result = styled.article`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;

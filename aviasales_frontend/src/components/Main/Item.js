@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { parseDuration, parseDate, parsePrice, declens } from '../../utils';
 
-const ItemStyled = styled.div`
+const ItemStyled = styled.section`
   box-sizing: border-box;
   width: 100%;
   padding: 20px;
@@ -30,14 +30,14 @@ const Cell = styled.div`
   flex-flow: column nowrap;
   align-items: flex-start;
 
-  header {
+  h6 {
     font-size: 12px;
     line-height: 18px;
     text-transform: uppercase;
     color: #A0B0B9;
   }
 
-  main {
+  div {
     font-size: 14px;
     line-height: 21px;
     font-weight: 600;
@@ -63,18 +63,18 @@ const Row = ({stops, duration, date, origin, destination}) => {
   return (
     <RowStyled>
       <Cell>
-        <header>{origin} - {destination}</header>
-        <main>{parseDate(date, duration)}</main>
+        <h6>{origin} - {destination}</h6>
+        <div>{parseDate(date, duration)}</div>
       </Cell>
       <Cell>
-        <header>В пути</header>
-        <main>{parseDuration(duration)}</main>
+        <h6>В пути</h6>
+        <div>{parseDuration(duration)}</div>
       </Cell>
       <Cell>
-        <header>
+        <h6>
           {declens(stops.length, ['Пересадка', 'Пересадки', 'Пересадок'])}
-          </header>
-        <main>{stops.join(',')}</main>
+        </h6>
+        <div>{stops.join(',')}</div>
       </Cell>
     </RowStyled>
   );

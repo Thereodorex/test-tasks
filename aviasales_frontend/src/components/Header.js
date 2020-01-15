@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import logo from '../img/Logo.svg';
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   margin-top: 50px;
   width: 60px;
   height: 60px;

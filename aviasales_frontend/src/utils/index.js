@@ -1,6 +1,6 @@
-export const parseDuration = duration => `${Math.floor(duration / 60)}ч ${duration % 60}м`;
+export const parseDuration = (duration) => `${Math.floor(duration / 60)}ч ${duration % 60}м`;
 
-const getTime = date => date.toLocaleTimeString([], {timeStyle: 'short'});
+const getTime = (date) => date.toLocaleTimeString([], {timeStyle: 'short'});
 
 export const parseDate = (date, duration) => {
   const dateStart = new Date(date);
